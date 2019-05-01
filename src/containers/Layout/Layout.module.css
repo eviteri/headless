@@ -1,0 +1,40 @@
+.Layout{
+    display: flex;
+}
+.LeftSection{
+    background-color: black;
+    width: 300px;
+    box-sizing: content-box;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.LeftSection,
+.LeftSection a,
+.LeftSection a:visited{
+    color: #aeb2b7;
+}
+
+.RightSection{
+    width: calc(100% - 300px);
+}
+
+@media only screen and (max-width: 500px){
+    .LeftSection{
+        position: fixed;
+        transform: translateX(-300px);
+        transition: transform 0.6s ease-out;
+    }
+
+    .Open{
+        transform: translateX(0);
+    }
+
+    .RightSection{
+        width: 100%;
+    }
+
+    .SiteContent{
+        margin-top: 50px;
+    }
+}

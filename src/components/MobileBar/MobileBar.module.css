@@ -1,0 +1,48 @@
+.MobileNavBar{
+    height: 50px;
+    min-height: 50px;
+    max-height: 50px;
+    width: 100%;
+    background: #2C2C2D;
+    display: none;
+    justify-content: flex-end;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+}
+
+.MobileNavButton{
+    display: inline-block;
+    cursor: pointer;
+    margin-right: 5px;
+    border: 1px solid #aeb2b7;
+    padding: 0 5px 0px 5px;
+}
+
+.Bar1, .Bar2, .Bar3 {
+    width: 35px;
+    height: 5px;
+    background-color: #aeb2b7;
+    margin: 6px 0;
+    transition: 0.4s;
+    -webkit-transition: 0.4s;
+    z-index: -1;
+}
+
+.Change .Bar1 {
+    -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+    transform: rotate(-45deg) translate(-9px, 6px);
+}
+
+.Change .Bar2 {opacity: 0;}
+
+.Change .Bar3 {
+    -webkit-transform: rotate(45deg) translate(-8px, -8px);
+    transform: rotate(45deg) translate(-8px, -8px);
+}
+
+@media only screen and (max-width: 500px){
+    .MobileNavBar{
+        display: flex;
+    }
+}

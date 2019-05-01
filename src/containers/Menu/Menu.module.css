@@ -1,0 +1,32 @@
+.MainNav ul{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.MainNav ul li{
+    list-style: none;
+    position: relative;
+    flex: 1 0 auto;
+    text-align: left;
+}
+
+.MainNav ul li a{
+    text-decoration: none;
+    display: block;
+    padding: .8rem 1rem;
+}
+
+.MainNav ul li ul li{
+    width: 100%;
+}
+
+.MainNav ul li ul{
+    background: #222222;
+}
+
+.Active{
+    background: #353535;
+}
