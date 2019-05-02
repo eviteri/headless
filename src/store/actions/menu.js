@@ -32,7 +32,8 @@ export const getMenu = () => {
                 
             })
             .catch(err => {
-                dispatch(fetchMenuFail(err.response.data.error));
+                console.log(err);
+                //dispatch(fetchMenuFail(err.response.data.error));
             })
     }
 }

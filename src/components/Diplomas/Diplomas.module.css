@@ -1,0 +1,21 @@
+.Photos {
+    line-height: 0;
+    column-count: 3;
+    column-gap: 5px;  
+    width: 95%;
+    margin: auto;
+}
+  
+.Photos img {
+    width: 100% !important;
+    height: auto !important;
+}
+
+
+@media (max-width: 800px) {
+    .Photos {
+        column-count: 1;
+    }
+}
+
+  

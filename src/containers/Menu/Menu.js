@@ -6,6 +6,7 @@ import { getSlug } from '../utilities';
 
 import classes from './Menu.module.css';
 import Accordion from '../UI/AccordionSection/AccordionSection';
+import Profile from '../../components/Profile/Profile';
 
 class Menu extends Component {
 
@@ -57,20 +58,21 @@ class Menu extends Component {
     render(){
         let content = null;
         
-        if(this.props.loading){
-            content = (<p>Loading.....</p>)
-        }
+        //if(this.props.loading){
+            //content = (<p>Loading.....</p>)
+        //}
 
         if(this.props.items){
-            content = this.buildMenu(this.props.items)
+            content = (
+                <Fragment>
+                    <Profile />
+                    {this.buildMenu(this.props.items)}
+                </Fragment>
+                    
+            )
         }
 
-        return (
-            <Fragment>
-                {content}
-            </Fragment>
-            
-        );
+        return content
     }
 }
 

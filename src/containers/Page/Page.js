@@ -8,6 +8,8 @@ import Certifications from '../../components/Certifications/Certifications';
 import Military from '../../components/Military/Military';
 import Leadership from '../../components/Leadership/Leadership';
 import HonorsAwards from '../../components/HonorsAwards/HonorsAwards';
+import Diplomas from '../../components/Diplomas/Diplomas';
+import Spinner from '../../components/UI/Spinner/Spinner';
 
 class Page extends Component {
     state = {
@@ -19,7 +21,6 @@ class Page extends Component {
         let oldSlugname = prevState.slugname;
 
         if(newSlugname !== oldSlugname){
-            console.log('Call fetch');
             nextProps.onGetPage(newSlugname);
             nextProps.onToggleMenu(false);
             return ({ slugname:newSlugname }) // <- this is setState equivalent
@@ -31,7 +32,7 @@ class Page extends Component {
 
     render(){
 
-        let content = (<p>Loadding</p>);
+        let content = <Spinner />;
 
         if(this.props.content){
             switch(this.state.slugname){
@@ -52,6 +53,9 @@ class Page extends Component {
                     break;
                 case 'awards-honors':
                     content = <HonorsAwards content={this.props.content.acf} />
+                    break;
+                case 'diplomas':
+                    content = <Diplomas content={this.props.content.acf} />
                     break;
                 default: 
                     content = (

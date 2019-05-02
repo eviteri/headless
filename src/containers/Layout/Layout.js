@@ -3,7 +3,6 @@ import {connect} from 'react-redux';
 import * as actions from '../../store/actions/index';
 import Menu from '../Menu/Menu';
 import MobileBar from '../../components/MobileBar/MobileBar';
-import Profile from '../../components/Profile/Profile';
 
 import classes from './Layout.module.css';
 
@@ -19,10 +18,16 @@ class Layout extends Component {
             this.props.isOpen ? classes.Open : '' 
         ];
 
+        let content = null;
+        if(this.props.isMenuLoading === false){
+            console.log(this.props);
+        
+        }
+        
+
         return(
             <section className={classes.Layout}>
                 <header className={menuClasses.join(" ")}>
-                    <Profile />
                     <Menu />
                 </header>
                 <main className={classes.RightSection}>
@@ -38,7 +43,8 @@ class Layout extends Component {
 
 const mapStateToProps = state => {
     return {
-        isOpen: state.menu.isOpen
+        isOpen: state.menu.isOpen,
+        isMenuLoading: state.menu.loading
     }
 }
 

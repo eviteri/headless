@@ -29,12 +29,12 @@ export const getPage = (slug) => {
         
         axios.get(url)
             .then(response => {
-                console.log(response.data[0]);
+                //console.log(response.data[0]);
                 dispatch(fetchPageSuccess(response.data[0]))
-                
             })
             .catch(err => {
-                dispatch(fetchPageFail(err.response.data.error));
+                console.log(err);
+                //dispatch(fetchPageFail(err.response.data.error));
             })
     }
 }
