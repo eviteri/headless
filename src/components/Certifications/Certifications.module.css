@@ -1,0 +1,38 @@
+.Certification{
+    background-color: #f5fafa;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    box-sizing: content-box;
+    color: #666;
+    justify-content: center;
+}
+.Certification div{
+    text-align: center;
+    margin: 20px;
+}
+
+.Certification h1,
+.Certification h2,
+.Certification h3{
+    letter-spacing: -1px;
+    color: inherit;
+    font-weight: 200;
+    line-height: 1.5;
+}
+.Certification h1{
+    font-size: 2.5em;
+}
+.Certification h2{
+    font-size: 2em; 
+}
+.Certification p{
+    color: inherit;
+    line-height: 2em;
+}
+.Certification img{
+    width: 100%;
+    max-width: 500px;
+    border: 1px solid lightgray;
+}

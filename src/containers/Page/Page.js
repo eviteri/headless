@@ -2,7 +2,12 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import * as actions from '../../store/actions/index';
 
-import Home from '../../components/Home/Home'
+import Home from '../../components/Home/Home';
+import Education from '../../components/Education/Education';
+import Certifications from '../../components/Certifications/Certifications';
+import Military from '../../components/Military/Military';
+import Leadership from '../../components/Leadership/Leadership';
+import HonorsAwards from '../../components/HonorsAwards/HonorsAwards';
 
 class Page extends Component {
     state = {
@@ -31,7 +36,22 @@ class Page extends Component {
         if(this.props.content){
             switch(this.state.slugname){
                 case 'home':
-                    content = <Home loading={this.props.loading} content={this.props.content.acf} slug={this.state.slugname}/>
+                    content = <Home content={this.props.content.acf} />
+                    break;
+                case 'education':
+                    content = <Education content={this.props.content.acf} />
+                    break;
+                case 'certifications':
+                    content = <Certifications content={this.props.content.acf} />
+                    break;
+                case 'military-experience':
+                    content = <Military content={this.props.content.acf} />
+                    break;
+                case 'leadership-experience':
+                    content = <Leadership content={this.props.content.acf} />
+                    break;
+                case 'awards-honors':
+                    content = <HonorsAwards content={this.props.content.acf} />
                     break;
                 default: 
                     content = (

@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import * as actions from '../../store/actions/index';
 import Menu from '../Menu/Menu';
 import MobileBar from '../../components/MobileBar/MobileBar';
+import Profile from '../../components/Profile/Profile';
 
 import classes from './Layout.module.css';
 
@@ -21,11 +22,7 @@ class Layout extends Component {
         return(
             <section className={classes.Layout}>
                 <header className={menuClasses.join(" ")}>
-                    <div className={classes.Profile}>
-                        <img src="http://api.eviteri.com/wp-content/uploads/2019/05/eloyPicture.jpg" alt="Profile Image"/>
-                        <h1>Eloy Viteri</h1>
-                        <p>Software Engineer</p>
-                    </div>
+                    <Profile />
                     <Menu />
                 </header>
                 <main className={classes.RightSection}>

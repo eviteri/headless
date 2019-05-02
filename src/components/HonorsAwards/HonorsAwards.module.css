@@ -1,0 +1,41 @@
+.HonorsAwards{
+    background-color: #f5fafa;
+    box-sizing: content-box;
+    color: #666;
+    text-align: center;
+    min-height: 100vh;
+}
+.HonorsAwards a,
+.HonorsAwards a:visited,
+.HonorsAwards a:focus,
+.HonorsAwards a:hover{
+    text-decoration: none;
+    color: inherit;
+}
+.HonorsAwards h1,
+.HonorsAwards h2,
+.HonorsAwards h3{
+    letter-spacing: -1px;
+    color: inherit;
+    font-weight: 200;
+    line-height: 1.5;
+}
+.HonorsAwards h1{
+    font-size: 2.5em;
+}
+.HonorsAwards h2{
+    font-size: 2em; 
+}
+.HonorsAwards p{
+    color: inherit;
+    line-height: 2em;
+}
+.HonorsAwards img{
+    width: 100%;
+    max-width: 500px;
+    border: 1px solid lightgray;
+}
+.Wrapper{
+    padding: 1em 3em;
+    text-align: left;
+}

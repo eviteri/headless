@@ -1,0 +1,36 @@
+.Military{
+    background-color: #f5fafa;
+    box-sizing: content-box;
+    color: #666;
+    text-align: center;
+    min-height: 100vh;
+}
+.Military h1,
+.Military h2,
+.Military h3{
+    letter-spacing: -1px;
+    color: inherit;
+    font-weight: 200;
+    line-height: 1.5;
+}
+.Military h1{
+    font-size: 2.5em;
+}
+.Military h2{
+    font-size: 2em; 
+}
+.Military p{
+    color: inherit;
+    line-height: 2em;
+}
+.Diploma{
+    background: #fdfef0;
+}
+.Diploma img{
+    width: 100%;
+    max-width: 500px;
+}
+
+.Wrapper{
+    padding: 1em 3em;
+}

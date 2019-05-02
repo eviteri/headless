@@ -1,0 +1,30 @@
+.Education{
+    background-color: #f5fafa;
+    box-sizing: content-box;
+    padding: 1em 3em;
+    color: #666;
+    text-align: center;
+}
+.Education h1,
+.Education h2,
+.Education h3{
+    letter-spacing: -1px;
+    color: inherit;
+    font-weight: 200;
+    line-height: 1.5;
+}
+.Education h1{
+    font-size: 2.5em;
+}
+.Education h2{
+    font-size: 2em; 
+}
+.Education p{
+    color: inherit;
+    line-height: 2em;
+}
+.Education img{
+    width: 100%;
+    max-width: 500px;
+    border: 1px solid lightgray;
+}
