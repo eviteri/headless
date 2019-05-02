@@ -2,54 +2,42 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import * as actions from '../../store/actions/index';
 
+import Home from '../../components/Home/Home'
+
 class Page extends Component {
     state = {
-        slugname: 'home'
+        slugname: this.props.slug
     }
-
-    componentDidMount(){
-        if(this.props.match.params.slugname){
-            this.setState({slugname: this.props.match.params.slugname})
-        }
-        this.props.onGetPage(this.state.slugname);
-    }
-    
+ 
     static getDerivedStateFromProps(nextProps, prevState) {
         let newSlugname = nextProps.match.params.slugname;
-        if(newSlugname){
-            if(newSlugname !== prevState.slugname){
-                console.log('OLD: ' + prevState.slugname);
-                console.log('New: ' + newSlugname);
-                nextProps.onGetPage(newSlugname)
+        let oldSlugname = prevState.slugname;
 
-                return ({ slugname:newSlugname }) // <- this is setState equivalent
-            }
+        if(newSlugname !== oldSlugname){
+            console.log('Call fetch');
+            nextProps.onGetPage(newSlugname);
+            nextProps.onToggleMenu(false);
+            return ({ slugname:newSlugname }) // <- this is setState equivalent
         }
-        
+ 
         // Return null to indicate no change to state.
         return null;
     }
 
-   
     render(){
+
         let content = (<p>Loadding</p>);
 
         if(this.props.content){
             switch(this.state.slugname){
                 case 'home':
-                    content = (
-                        <div>
-                            <h1>{this.props.content.acf.title}</h1>
-                        </div>
-                    )
+                    content = <Home loading={this.props.loading} content={this.props.content.acf} slug={this.state.slugname}/>
                     break;
                 default: 
                     content = (
                         <p>Couldnt load page....</p>
                     )
             }
-
-            console.log(this.state.slugname);
         }
 
         return content;
@@ -58,15 +46,18 @@ class Page extends Component {
 
 const mapStateToProps = state => {
     return {
+        slug: state.page.slug,
         content: state.page.content,
         loading: state.page.loading,
-        error: state.page.error
+        error: state.page.error,
+        isMenuOpen: state.menu.isOpen
     }
 }
 
 const mapDispatchToProps = dispatch => {
     return {
-        onGetPage: (slugname) => dispatch(actions.getPage(slugname))
+        onGetPage: (slugname) => dispatch(actions.getPage(slugname)),
+        onToggleMenu: (open) => dispatch(actions.toggleMenu(open))
     }
 }
 

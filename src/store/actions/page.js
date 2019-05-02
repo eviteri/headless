@@ -10,6 +10,7 @@ export const fetchPageStart = () => {
 export const fetchPageSuccess = (content) => {
     return {
         type: actionTypes.FETCH_PAGE_SUCCESS,
+        slug: content.slug,
         content: content
     }
 }

@@ -10,13 +10,14 @@
     list-style: none;
     position: relative;
     flex: 1 0 auto;
-    text-align: left;
+    text-align: right;
 }
 
 .MainNav ul li a{
     text-decoration: none;
     display: block;
-    padding: .8rem 1rem;
+    padding: .8rem 1.5em;
+    font-size: 0.8em;
 }
 
 .MainNav ul li ul li{
@@ -29,4 +30,8 @@
 
 .Active{
     background: #353535;
+}
+
+.Icon{
+    margin-left: 10px;
 }

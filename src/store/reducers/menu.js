@@ -4,7 +4,8 @@ import { updateObject } from '../utility';
 const initialState = {
     items: null,
     loading: false,
-    error: null
+    error: null,
+    isOpen: false
 }
 
 const fetchMenuStart = (state, action) => {
@@ -27,11 +28,20 @@ const fetchMenuFail = (state, action) => {
     });
 }
 
+const toggleMenu = (state, action) => {
+    return updateObject(state, {
+        isOpen: action.isOpen
+    });
+}
+
+
 const reducer = (state = initialState, action) => {
     switch (action.type){
         case actionTypes.FETCH_MENU_START: return fetchMenuStart(state, action);
         case actionTypes.FETCH_MENU_SUCCESS: return fetchMenuSuccess(state, action);
         case actionTypes.FETCH_MENU_FAIL: return fetchMenuFail(state, action);
+        case actionTypes.TOGGLE_MENU: return toggleMenu(state, action);
+        
         default: return state;
     }
 };

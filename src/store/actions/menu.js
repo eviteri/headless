@@ -24,7 +24,7 @@ export const fetchMenuFail = (error) => {
 export const getMenu = () => {
     return dispatch => {
         dispatch(fetchMenuStart());
-        const url = '/wp-json/wp-api-menus/v2/menus/2';
+        const url = '/wp-json/menus/v1/menus/2';
         
         axios.get(url)
             .then(response => {
@@ -34,5 +34,12 @@ export const getMenu = () => {
             .catch(err => {
                 dispatch(fetchMenuFail(err.response.data.error));
             })
+    }
+}
+
+export const toggleMenu = (isOpen) => {
+    return {
+        type: actionTypes.TOGGLE_MENU,
+        isOpen: isOpen
     }
 }

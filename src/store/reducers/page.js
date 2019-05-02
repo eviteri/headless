@@ -2,6 +2,7 @@ import * as actionTypes from '../actions/actionTypes';
 import { updateObject } from '../utility';
 
 const initialState = {
+    slug: null,
     content: null,
     loading: false,
     error: null
@@ -9,12 +10,14 @@ const initialState = {
 
 const fetchPageStart = (state, action) => {
     return updateObject(state, {
-        loading: true,
+        content: null,
+        loading: true
     })
 }
 
 const fetchPageSuccess = (state, action) => {
     return updateObject(state, {
+        slug: action.slug,
         content: action.content,
         loading: false,
     })
@@ -22,6 +25,7 @@ const fetchPageSuccess = (state, action) => {
 
 const fetchPageFail = (state, action) => {
     return updateObject(state, {
+        content: null,
         loading: false,
         error: action.error
     });

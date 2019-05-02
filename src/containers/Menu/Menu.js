@@ -36,7 +36,12 @@ class Menu extends Component {
                                 let url = getSlug(item.url);
                                 li = (
                                     <li key={index}>
-                                        <NavLink to={url} exact activeClassName={classes.Active} dangerouslySetInnerHTML={{ __html: item.title }} />
+                                        <NavLink to={url} exact activeClassName={classes.Active} >
+                                            {item.title}
+                                            <span className={classes.Icon}>
+                                                <i className={'fas ' + item.icon}></i>
+                                            </span>
+                                        </NavLink>
                                     </li>
                                 )
                             }

@@ -1,5 +1,6 @@
 export {
-    getMenu
+    getMenu,
+    toggleMenu
 }from './menu';
 
 export {
