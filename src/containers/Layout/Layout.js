@@ -17,14 +17,7 @@ class Layout extends Component {
             classes.LeftSection, 
             this.props.isOpen ? classes.Open : '' 
         ];
-
-        let content = null;
-        if(this.props.isMenuLoading === false){
-            console.log(this.props);
-        
-        }
-        
-
+ 
         return(
             <section className={classes.Layout}>
                 <header className={menuClasses.join(" ")}>

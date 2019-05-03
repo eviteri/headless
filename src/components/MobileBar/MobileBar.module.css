@@ -42,7 +42,7 @@
     transform: rotate(45deg) translate(-8px, -8px);
 }
 
-@media only screen and (max-width: 500px){
+@media only screen and (max-width: 900px){
     .MobileNavBar{
         display: flex;
     }

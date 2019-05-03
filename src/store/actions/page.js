@@ -30,7 +30,12 @@ export const getPage = (slug) => {
         axios.get(url)
             .then(response => {
                 //console.log(response.data[0]);
-                dispatch(fetchPageSuccess(response.data[0]))
+                if(response.data.length > 0){
+                    dispatch(fetchPageSuccess(response.data[0]))
+                }else{
+                    dispatch(fetchPageFail('Cannot read property slug of undefined'));
+                }
+                
             })
             .catch(err => {
                 console.log(err);

@@ -11,7 +11,8 @@ const initialState = {
 const fetchPageStart = (state, action) => {
     return updateObject(state, {
         content: null,
-        loading: true
+        loading: true,
+        error: null
     })
 }
 
@@ -25,6 +26,7 @@ const fetchPageSuccess = (state, action) => {
 
 const fetchPageFail = (state, action) => {
     return updateObject(state, {
+        slug: null,
         content: null,
         loading: false,
         error: action.error

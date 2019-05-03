@@ -32,9 +32,17 @@ class Page extends Component {
 
     render(){
 
-        let content = <Spinner />;
+        let content = null;
 
-        if(this.props.content){
+        if(this.props.loading){
+            content = <Spinner />;
+        }
+
+        if(this.props.error){
+            this.props.history.push('/');
+        }
+    
+        if (this.props.content){  
             switch(this.state.slugname){
                 case 'home':
                     content = <Home content={this.props.content.acf} />
@@ -65,6 +73,7 @@ class Page extends Component {
         }
 
         return content;
+
     }
 }
 
