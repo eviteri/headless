@@ -8,7 +8,8 @@ import Certifications from '../../components/Certifications/Certifications';
 import Military from '../../components/Military/Military';
 import Leadership from '../../components/Leadership/Leadership';
 import HonorsAwards from '../../components/HonorsAwards/HonorsAwards';
-import Diplomas from '../../components/Diplomas/Diplomas';
+//import Diplomas from '../../components/Diplomas/Diplomas';
+import WallGallery from '../../containers/UI/WallGallery/WallGallery';
 import Spinner from '../../components/UI/Spinner/Spinner';
 
 class Page extends Component {
@@ -63,7 +64,8 @@ class Page extends Component {
                     content = <HonorsAwards content={this.props.content.acf} />
                     break;
                 case 'diplomas':
-                    content = <Diplomas content={this.props.content.acf} />
+                    //content = <Diplomas content={this.props.content.acf} />
+                    content = <WallGallery content={this.props.content.acf} />
                     break;
                 default: 
                     content = (

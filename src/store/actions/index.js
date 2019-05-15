@@ -6,3 +6,11 @@ export {
 export {
     getPage
 }from './page';
+
+export {
+    setLightBoxImages,
+    showLightBox,
+    closeLightBox,
+    nextLightBoxImage,
+    previousLightBoxImage
+}from './lightbox'
