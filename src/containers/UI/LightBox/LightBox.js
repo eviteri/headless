@@ -1,4 +1,4 @@
-import React, {useRef} from 'react';
+import React, {useRef, useEffect} from 'react';
 import {connect} from 'react-redux';
 import * as actions from '../../../store/actions/index';
 import './LightBox.css';
@@ -6,6 +6,10 @@ import './LightBox.css';
 const LightBox = props => {
 
     const lightboxDiv = useRef(null);
+
+    useEffect(() => {
+        return () => props.onResetLightBox();
+    }, []);
 
     const closeLightBox = (event) => {
         if(event.target === lightboxDiv.current){
@@ -69,6 +73,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
+        onResetLightBox: () => dispatch(actions.resetLightBoxImages()),
         onCloseLightBox: () => dispatch(actions.closeLightBox()),
         onNextLightBox: (image, index) => dispatch(actions.nextLightBoxImage(image, index)),
         onPrevLightBox: (image, index) => dispatch(actions.previousLightBoxImage(image, index))

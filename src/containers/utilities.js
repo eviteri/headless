@@ -23,8 +23,9 @@ export const getSlug = (url) => {
     const parts = url.split('/');
     const removeBlanks = removeEmptyElements(parts);
     const removeDuplicates = removeDuplicateElementes(removeBlanks);
-    let part1, part2, route;
-    [part1, part2, ...route] = removeDuplicates;
+    //let part1, part2, route;
+    //[part1, part2, ...route] = removeDuplicates;
+    let [part1, part2, ...route] = removeDuplicates;
     let stringRoute = '/' + route.join("/");
     
     if(stringRoute === '/'){

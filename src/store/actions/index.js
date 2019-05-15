@@ -8,6 +8,7 @@ export {
 }from './page';
 
 export {
+    resetLightBoxImages,
     setLightBoxImages,
     showLightBox,
     closeLightBox,

@@ -1,5 +1,4 @@
 import * as actionTypes from '../actions/actionTypes';
-import { updateObject } from '../utility';
 
 const initialState = {
     images: null,
@@ -10,6 +9,14 @@ const initialState = {
 
 const reducer = (state = initialState, action) => {
     switch (action.type){
+        case actionTypes.RESET_LIGHTBOX_IMAGES: 
+            return {
+                ...state,
+                images: null,
+                currentImage: null,
+                currentIndex: null,
+                showLightBox: false
+            };
         case actionTypes.SET_LIGHTBOX_IMAGES: 
             return {
                 ...state,

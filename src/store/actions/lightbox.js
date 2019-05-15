@@ -1,5 +1,11 @@
 import * as actionTypes from './actionTypes';
 
+export const resetLightBoxImages =() =>{
+    return {
+        type: actionTypes.RESET_LIGHTBOX_IMAGES
+    }
+}
+
 export const setLightBoxImages = (images) => {
     return {
         type: actionTypes.SET_LIGHTBOX_IMAGES,

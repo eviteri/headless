@@ -1,7 +1,10 @@
-import React  from 'react';
+import React, {useEffect} from 'react';
+import {connect} from 'react-redux';
+import * as actions from '../../store/actions/index';
 import classes from './Certifications.module.css';
+import LightBox from '../../containers/UI/LightBox/LightBox';
 
-const certifications = (props) => {
+const Certifications = (props) => {
     let content = null;
 
     if(props.content.certifications){
@@ -13,18 +16,34 @@ const certifications = (props) => {
                             <h2>{certification.title}</h2>
                             <p>Issue: {certification.issue}</p>
                             { certification.expire ? <p>Expire: {certification.expire}</p>: null}
-                            
-                            <a href={certification.diploma} target="_blank" rel="noopener noreferrer">
-                                <img src={certification.diploma} alt="" />
-                            </a>
+                            { certification.url ? <img src={certification.url} alt="" /> : null }
                        </div>
                    )
                })}
             </section>
         )
+
+        console.log(props.content.certifications);
+        
+        
     }
 
     
     return content;
 }
-export default certifications;
+
+const mapStateToProps = state => {
+    return {
+        images: state.lightbox.images,
+        showLightBox: state.lightbox.showLightBox
+    }
+}
+
+const mapDispatchToProps = dispatch => {
+    return {
+        onGetImages: (images) => dispatch(actions.setLightBoxImages(images)),
+        onShowLightBox: (image, index) => dispatch(actions.showLightBox(image,index))
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Certifications);
