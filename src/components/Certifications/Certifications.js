@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, {Fragment} from 'react';
 import {connect} from 'react-redux';
 import * as actions from '../../store/actions/index';
 import classes from './Certifications.module.css';
@@ -8,24 +8,25 @@ const Certifications = (props) => {
     let content = null;
 
     if(props.content.certifications){
-        content = (
-            <section className={classes.Certification}>
-               {props.content.certifications.map( (certification, index) => {
-                   return (
-                       <div key={index}>
-                            <h2>{certification.title}</h2>
-                            <p>Issue: {certification.issue}</p>
-                            { certification.expire ? <p>Expire: {certification.expire}</p>: null}
-                            { certification.url ? <img src={certification.url} alt="" /> : null }
-                       </div>
-                   )
-               })}
-            </section>
-        )
+        props.onGetImages(props.content.certifications)
 
-        console.log(props.content.certifications);
-        
-        
+        content = (
+            <Fragment>
+                <LightBox showLightBox={props.showLightBox} />
+                <section className={classes.Certification}>
+                    {props.content.certifications.map( (certification, index) => {
+                        return (
+                            <div key={index}>
+                                <h2>{certification.title}</h2>
+                                <p>Issue: {certification.issue}</p>
+                                { certification.expire ? <p>Expire: {certification.expire}</p>: null}
+                                { certification.url ? <img src={certification.url} alt="" onClick={() => props.onShowLightBox(certification.url, index) }/> : null }
+                            </div>
+                        )
+                    })}
+                </section>
+            </Fragment>
+        )        
     }
 
     

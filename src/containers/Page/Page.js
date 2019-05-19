@@ -11,6 +11,7 @@ import HonorsAwards from '../../components/HonorsAwards/HonorsAwards';
 //import Diplomas from '../../components/Diplomas/Diplomas';
 import WallGallery from '../../containers/UI/WallGallery/WallGallery';
 import Spinner from '../../components/UI/Spinner/Spinner';
+import ContactMe from '../ContactMe/ContactMe';
 
 class Page extends Component {
     state = {
@@ -57,15 +58,18 @@ class Page extends Component {
                 case 'military-experience':
                     content = <Military content={this.props.content.acf} />
                     break;
-                case 'leadership-experience':
+                case 'leadership':
                     content = <Leadership content={this.props.content.acf} />
                     break;
-                case 'awards-honors':
+                case 'awards':
                     content = <HonorsAwards content={this.props.content.acf} />
                     break;
                 case 'diplomas':
                     //content = <Diplomas content={this.props.content.acf} />
                     content = <WallGallery content={this.props.content.acf} />
+                    break;
+                case 'contact':
+                    content = <ContactMe content={this.props.content} />
                     break;
                 default: 
                     content = (

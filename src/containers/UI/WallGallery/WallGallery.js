@@ -5,11 +5,6 @@ import classes from './WallGallery.module.css';
 import LightBox from '../LightBox/LightBox';
 
 class WallGallery extends Component {
-
-    componentDidMount(){
-        this.props.onGetImages(this.props.content.diplomas);
-    }
-
     render(){
         let content = null;
 
@@ -19,14 +14,11 @@ class WallGallery extends Component {
         }
 
         if (this.props.content.diplomas) {
+            this.props.onGetImages(this.props.content.diplomas);
+
             content = (
                 <Fragment>
-                    {this.props.showLightBox 
-                        ? <LightBox showLightBox={this.props.showLightBox}  />
-                        : null
-                    }
-                    
-                    
+                    <LightBox showLightBox={this.props.showLightBox}  />    
                     <section className={classes.Photos}>
                         {this.props.content.diplomas.map((photo, index) => {
                             return (

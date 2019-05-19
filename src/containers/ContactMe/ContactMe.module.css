@@ -1,0 +1,35 @@
+.ContactContent{
+    background-color: #f5fafa;
+    box-sizing: content-box;
+    color: #666;
+    min-height: 100vh;
+}
+.ContactContent h2{
+    font-size: 2em;
+    letter-spacing: -1px;
+    font-weight: 300;
+    color: #666;
+    text-align: center;
+}
+.ButtonWrapper{
+    text-align: center;
+}
+.SendButton{
+    position: relative;
+    display: inline-block;
+    border-radius: 0.35em;
+    color: #fff;
+    text-decoration: none;
+    padding: 0.75em 2.5em 0.75em 2.5em;
+    background-color: #8ebebc;
+    border: 0;
+    cursor: pointer;
+    transition: background-color 0.35s ease-in-out;
+}
+.SpinnerWrapper{
+    position: absolute;
+    width: 100%;
+    background: #d8d8d8a3;
+    z-index: 8;
+    top: 0;
+}

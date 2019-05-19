@@ -1,8 +1,7 @@
 import axios from 'axios';
 
 const instance = axios.create({
-    //baseURL: 'http://api.bhumiphotography.com'
-    baseURL: 'http://api.eviteri.com'
+    baseURL: 'http://rest.eviteri.com'
 });
 
 export default instance;

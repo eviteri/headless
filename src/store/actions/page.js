@@ -25,7 +25,7 @@ export const fetchPageFail = (error) => {
 export const getPage = (slug) => {
     return dispatch => {
         dispatch(fetchPageStart());
-        const url = 'http://api.eviteri.com/wp-json/wp/v2/pages?slug=' + slug;
+        const url = 'http://rest.eviteri.com/wp-json/wp/v2/pages?slug=' + slug;
         
         axios.get(url)
             .then(response => {

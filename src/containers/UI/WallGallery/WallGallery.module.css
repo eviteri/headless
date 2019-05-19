@@ -9,6 +9,7 @@
 .Photos img {
     width: 100% !important;
     height: auto !important;
+    cursor: pointer;
 }
 
 

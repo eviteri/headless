@@ -38,8 +38,6 @@ const LightBox = props => {
         css.push('Open');
     }
 
-    console.log(css);
-
     return (
         <div ref={lightboxDiv} className={css.join(" ")} onClick={closeLightBox}>
             <div className="LightBoxContainer" > 

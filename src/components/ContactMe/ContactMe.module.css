@@ -1,0 +1,22 @@
+.InputWrapper{
+    width: 90%;
+    margin: 0 auto 10px auto;
+}
+.Input{
+    box-sizing: border-box;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid lightgray;
+}
+.TextArea{
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid lightgray;
+    min-height: 300px;
+}
+.Error{
+    color: red;
+    font-style: italic;
+    font-size: 14px;
+    margin: 5px 0;
+}

@@ -1,14 +1,23 @@
 import React, { Fragment } from 'react';
 import classes from './Home.module.css';
+import {withRouter} from 'react-router-dom';
 
-const home = (props) => {
-    //<button className={classes.Button} dangerouslySetInnerHTML={{ __html: props.content.banner_button_text }} />
+const Home = (props) => {
+    
+    const redirectHandler = () => {
+        props.history.push("/contact");
+    }
+
     return (
         <Fragment>
             <section className={classes.Intro}>
                 <div className={classes.Container}>
                     <h2 dangerouslySetInnerHTML={{ __html: props.content.banner_title }} />
                     <p dangerouslySetInnerHTML={{ __html: props.content.banner_paragraph }} /> 
+                    <button 
+                        className={classes.Button} 
+                        dangerouslySetInnerHTML={{ __html: props.content.banner_button_text }} 
+                        onClick={redirectHandler}/>
                 </div>
             </section>
             <section className={classes.ContentContainer}>
@@ -18,4 +27,4 @@ const home = (props) => {
         </Fragment>
     );
 }
-export default home;
+export default withRouter(Home);
